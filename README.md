@@ -12,7 +12,7 @@ The _constructor_ accepts 4 arguments
   - `config?: IBsModalHelperConfig`
     - (Optional) The config object.
 
-The helper can be initialized and displayed like so:
+The helper can be initialized like so:
 ```ts
 var myModalSettings: Kaiser.IBsModalHelperSettings = {
     title: "Title",
