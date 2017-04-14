@@ -1,7 +1,8 @@
 # BsModalHelper
-Bootstrap Modal Helper
 
-The BsModalHelper constructor accepts 4 arguments
+A **Bootstrap Modal Helper** written in TypeScript.
+
+The _constructor_ accepts 4 arguments
   - `id: string`
     - This will be the unique identifier for the generated outermost `<div>` element. 
   - `$target: JQuery`
