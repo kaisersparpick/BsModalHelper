@@ -37,15 +37,15 @@ namespace Kaiser {
         </div>
     `;
 
-    let _config: IBsModalHelperConfig;
-    let _settings: IBsModalHelperSettings;
-
     export class BsModalHelper {
+        config: IBsModalHelperConfig;
+        settings: IBsModalHelperSettings;
+
         $modal: JQuery;
 
         constructor(id: string, $target: JQuery, settings: IBsModalHelperSettings, config?: IBsModalHelperConfig) {
-            _config = config || _configDefaults;
-            _settings = settings;
+            this.config = config || _configDefaults;
+            this.settings = settings;
 
             $target.html(_modalTpl);
             this.$modal = $target.find("> div").prop("id", id);
@@ -54,15 +54,15 @@ namespace Kaiser {
         }
 
         init() {
-            this.$modal.find(".modal-title").text(_settings.title);
-            this.$modal.find(".modal-body").html(_settings.body);
+            this.$modal.find(".modal-title").text(this.settings.title);
+            this.$modal.find(".modal-body").html(this.settings.body);
 
-            if (_config.showFooter === false)
+            if (this.config.showFooter === false)
                 this.$modal.find(".modal-footer").remove();
-            if (_config.showHeaderButton === false)
+            if (this.config.showHeaderButton === false)
                 this.$modal.find(".modal-header > button").remove();
-            if (_config.modalOptions !== undefined)
-                this.$modal.modal(_config.modalOptions);
+            if (this.config.modalOptions !== undefined)
+                this.$modal.modal(this.config.modalOptions);
         }
 
         show() {
